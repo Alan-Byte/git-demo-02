@@ -1,0 +1,81 @@
+div 内部文档流总元素高度决定
+
+
+div里只有一个内联元素，div 高度由字体行高决定。
+  不能用 &nbsp 来空格对齐，因为空格大小由字体设计师决定
+   一行对齐
+  span：：after{
+  content: "
+  display: inline-block 
+   width: 100%
+  再在span 里加个overflow：hidden
+
+
+  list-none 去掉列表小圆点
+  li 竖排变横排 用float：left  去空格
+   不能用overflow 去除浮动
+  另外ul class= "clearfix"
+  .clearfix::after{
+   content:''
+   display: block;
+   clear: both
+
+  内联元素多 ，不够换行，元素自动流动 Z字形流动  想水流 也就是文档流
+  连字符分行写单词 或者div 里面word-break: break-all;
+  
+
+多行文字溢出
+   一行多出文本省略号
+            white-space: nowrap;
+            overflow: hidden; 多出的文字省略
+           text-overflow: ellipsis;
+    多行多出文本省略号 
+          border: 1px solid red;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+  
+ 文字垂直居中
+      控制行高不要定死 用padding
+        div{      border: 1px solid red;
+      line-height: 24px;
+      padding: 8px 0;
+      text-align: center;}
+ 
+
+div 里y有div 高度确定
+      子元素margin 大于父元素，父元素没有border、padding ,因为父亲挡不住儿子，margin合并
+      爸爸可以加border，padding，overflow：hidden 写一个字也可以（不推荐，因为后续就不能加浮动层了）
+
+
+
+
+
+
+脱离文档流 不算高度和大小
+     float：left           position:fixed,absolute
+                               posistion:relative 不会影响其他元素，仍然可决定父元素高度
+    
+
+div 中div 如何垂直居中
+    
+   padding：10px;  
+  margin: 0,auto
+    全屏div 去掉padding 
+         div{ border: 3px......
+           width: 100vh
+                 ;
+               boxing-sizing: border-box}
+             body 的margin:0;
+  1.son{
+         margin:auto
+             position:absolute:
+           top,bottom,left,right:0          height一定
+     能使son 在dad div里面垂直垂直左右上下居中
+    2.dad{justiffy-content: center;
+             align-items: center;
+       
+
+
